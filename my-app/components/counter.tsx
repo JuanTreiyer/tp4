@@ -25,9 +25,7 @@ export default function Counter({counter}:{counter: Counter | null}) {
     )
     .subscribe()
 
-    return () => {
-      supabase.removeChannel(channel);
-    };
+  
   }, []);
 
    // Función para incrementar el contador
