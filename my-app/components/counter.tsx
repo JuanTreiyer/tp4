@@ -24,6 +24,9 @@ export default function Counter({counter}:{counter: Counter | null}) {
       (payload) => {setContador( payload.new as Counter)}
     )
     .subscribe()
+    return () => {
+      supabase.removeChannel(channel);
+    };
 
   
   }, []);
