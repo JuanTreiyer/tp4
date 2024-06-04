@@ -18,7 +18,7 @@ export default function Counter({counter}:{counter: Counter | null}) {
     .on(
       'postgres_changes',
       {
-        event: '*',
+        event: 'UPDATE',
         schema: 'public',
       },
       (payload) => {setContador( payload.new as Counter)}
