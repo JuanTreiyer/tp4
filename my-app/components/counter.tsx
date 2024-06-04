@@ -30,12 +30,16 @@ export default function Counter({counter}:{counter: Counter | null}) {
 
    // Función para incrementar el contador
    const incrementarContador = async () => {
-    if (contador?.value){
-        await incrementCounterValue(contador.value + 1);
-        const {value, ...props} = contador
-        setContador({value: value + 1, ...props});
-    }else{
-        
+    if (contador?.value == 0) {
+      await incrementCounterValue(contador.value + 1);
+      const { value, ...props } = contador
+      setContador({ value: value + 1, ...props });
+    }
+
+    else if (contador?.value) {
+      await incrementCounterValue(contador.value + 1);
+      const { value, ...props } = contador
+      setContador({ value: value + 1, ...props });
     }
   
 
